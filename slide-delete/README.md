@@ -7,4 +7,7 @@
 #### 打包
     npm run build
 #### 效果
-![image](https://github.com/KuangPF/webpack-demo/blob/master/src/img/webpack-demo.gif) 
+![image](https://github.com/KuangPF/Web-Plugin/blob/master/slide-delete/src/assets/slide-delete.gif)
+
+参考了项目:https://github.com/DeronEndless/vue-left-slip-delete, 在该项目基础上做了修改.
+
