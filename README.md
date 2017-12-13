@@ -3,5 +3,5 @@
 
 ****
 ## 目录
-### 滑动删除[https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/slideDelete.md]
-### 图片预览[https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/photoswipe.md]
+### 滑动删除https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/slideDelete.md
+### 图片预览https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/photoswipe.md
