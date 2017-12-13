@@ -1,0 +1,38 @@
+.photoswipe-container {
+  .header {
+    background: #EEBF02;
+    height: 61px;
+    padding: 0;
+    border-bottom: 1px solid #3c3c3c;
+    text-align: center;
+    & img {
+      width: 230px;
+      height: 48px;
+      margin: 0 auto;
+    }
+  }
+  .titile {
+    font-size: 20px;
+    padding: 15px 10px;
+    color: #444340;
+    font-weight: 600;
+  }
+  .main-container {
+    .gallery li {
+      float: left;
+      width: 33.33%;
+      & a {
+        display: block;
+        margin: 5px;
+        border: 1px solid #3c3c3c;
+        color: #444340;
+      }
+    }
+  }
+}
+
+.pswp__button--share,
+.pswp__button--arrow--right,
+.pswp__button--arrow--right {
+  display: none !important;
+}

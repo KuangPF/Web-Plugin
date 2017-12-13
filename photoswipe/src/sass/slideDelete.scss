@@ -1,0 +1,45 @@
+.title {
+    font-size: 25px;
+    color: #333;
+    padding: 10px 5px;
+}
+.delete-content {
+    margin-top: 20px;
+    .slide-warp {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        height: 50px;
+        border-top: 1px solid #eaeaea;
+        &:last-child {
+          border-bottom: 1px solid #eaeaea;
+        }
+        .slide-item {
+          width: 100%;
+          height: 100%;
+          background: #fff;
+          position: absolute;
+          left: 0;
+          z-index: 1;
+          display: flex;
+          flex-direction: row;
+          line-height: 50px;
+          padding-left: 10px;
+          box-sizing: border-box;
+        }
+        .slide-del {
+          background: #e84747;
+          color: #fff;
+          width: 84px;
+          height: 100%;
+          line-height: 50px;
+          text-align: center;
+          font-size: 18px;
+          position: absolute;
+          right: 0;
+          top: 0;
+          z-index: 0;
+        }
+      }
+      
+}
