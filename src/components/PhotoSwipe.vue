@@ -1,5 +1,5 @@
 <template>
-  <div class="photoswipe-container">
+  <div class="photoswipe-container" v-title="'photoswipe'">
       <div class="header"><img src="../../static/photoswipe/img/codecomputerlovelogo.gif"></div>
       <div class="titile">PhotoSwipe</div>
       <div class="main-container">

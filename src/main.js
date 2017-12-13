@@ -10,10 +10,18 @@ Vue.use(preview)
 
 Vue.config.productionTip = false
 
+Vue.directive('title', {
+  inserted: function (el, binding) {
+    document.title = binding.value
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: {
+    App
+  }
 })

@@ -1,5 +1,5 @@
 <template>
-	<div class="slide-content">
+	<div class="slide-content" v-title="'slide-delete'">
         <div class="title">滑动删除</div>
 		<div class="delete-content">
             <div class="slide-warp"  v-for="(item,index) in list" >

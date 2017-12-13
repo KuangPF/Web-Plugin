@@ -11,10 +11,25 @@ Router.prototype.goBack = function () {
   this.isBack = true
   window.history.go(-1)
 }
+// export default new Router({
+//   routes: [{
+//     path: '/',
+//     name: 'index',
+//     component: index
+//   }, {
+//     path: '/slide-delete',
+//     name: 'SlideDelete',
+//     component: SlideDelete
+//   }, {
+//     path: '/photoswipe',
+//     name: 'PhotoSwipe',
+//     component: PhotoSwipe
+//   }]
+// })
 export default new Router({
   routes: [{
     path: '/',
-    name: 'PageTransition',
+    name: '',
     component: PageTransition,
     children: [{
       path: '',
