@@ -14,6 +14,10 @@
               <div class="progress-bar"><div class="progress-value" :style="{width:progressValueMe}"></div></div>
           </div>
       </div>
+      <transition name="fade">
+          <div class="mask-pk" v-if="maskShow">
+          </div>
+      </transition>
   </div>
 </template>
 
@@ -24,7 +28,8 @@ export default {
       nickNameShow: false,
       isStart: false,
       progressValueUser: 0,
-      progressValueMe: 0
+      progressValueMe: 0,
+      maskShow: false
     };
   },
   mounted() {
@@ -33,9 +38,12 @@ export default {
       _this.isStart = true;
     }, 0);
     setTimeout(function() {
-      _this.progressValueUser = '50px';
-      _this.progressValueMe = '60px';
-    }, 0);
+      _this.progressValueUser = "80%";
+      _this.progressValueMe = "20%";
+    }, 500);
+    setTimeout(function() {
+      _this.maskShow = true;
+    }, 2000);
   }
 };
 </script>
