@@ -13,7 +13,7 @@
     }
   }
   .main-content {
-    margin-top: 40px;
+    margin: 40px 0;
     .content-item {
       height: 115px;
       width: 100%;
@@ -57,5 +57,13 @@
         }
       }
     }
+  }
+  .coypright {
+    position: absolute;
+    bottom: 10px;
+    color: #FBFBFB;
+    left: 0;
+    right: 0;
+    margin:auto;
   }
 }

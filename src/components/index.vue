@@ -16,6 +16,7 @@
               </div>
           </div>
       </div>
+      <div class="coypright"></div>
   </div>
 </template>
 
@@ -44,7 +45,7 @@ export default {
   methods: {
     viewDetail(pathUrl) {
       console.log(pathUrl);
-      this.$router.push({ path: pathUrl, query: '' });
+      this.$router.push({ path: pathUrl, query: "" });
     }
   }
 };

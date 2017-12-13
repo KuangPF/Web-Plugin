@@ -1,21 +1,8 @@
-# photoswipe
+# Wep Plugins
+===========================
+该项目是将自己在前端开发中遇到的一些插件，或者是实现某种功能的一些技术记录下来，持续更新，欢迎star:blush::blush::blush:
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+****
+## 目录
+### 滑动删除[https://github.com/KuangPF/Web-Plugin/tree/master/docs/slideDelete.md]
+### 图片预览[https://github.com/KuangPF/Web-Plugin/tree/master/docs/photoswipe.md]
