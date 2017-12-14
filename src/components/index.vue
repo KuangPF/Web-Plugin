@@ -6,8 +6,13 @@
       <div class="main-content">
           <div class="content-item" v-for="(item,index) in pluginItems" :style="{backgroundColor:item.BGColor}" @click="viewDetail(item.pathUrl)">
               <div class="content-left">
-                  <div class="plugin-title">{{item.title}}</div>
-                  <div class="plugin-desc">{{item.desc}}</div>
+                  <div class="top">
+                      <div class="plugin-title">{{item.title}}</div>
+                      <div class="update">{{item.updateTime}}</div>
+                  </div>
+                  <div class="bottom">
+                      <div class="plugin-desc">{{item.desc}}</div>
+                 </div>
               </div>
               <div class="content-right">
                   <div class="plugin-demo-img">
@@ -30,14 +35,16 @@ export default {
           desc: "移动端左滑删除,利用touchstart(),touchmove(),touchend()方法实现.",
           imgSrc: "../../static/index/slide-delete.gif",
           BGColor: "#DBDAD9",
-          pathUrl: "/slide-delete"
+          pathUrl: "/slide-delete",
+          updateTime:"2017.12.10"
         },
         {
           title: "photoswipe",
           desc: "实现图片点击预览,该版本为vue-photoswipe,依赖photoswipe.",
           imgSrc: "../../static/index/photoswipe.gif",
           BGColor: "#DBDAD9",
-          pathUrl: "/photoswipe"
+          pathUrl: "/photoswipe",
+          updateTime:"2017.12.13"
         }
       ]
     };
