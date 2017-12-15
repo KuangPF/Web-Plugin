@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function getPluginItems() {
-    return axios.request('../../data.json',{
+    return axios.request('../../static/data/data.json',{
        method:'get',
        params:''
     })
