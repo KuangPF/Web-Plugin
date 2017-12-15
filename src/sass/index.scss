@@ -1,68 +1,87 @@
 .index {
-  padding: 10px;
-  background-color: #333;
+  background-color: #FFF;
   min-height: 100%;
   position: absolute;
   box-sizing: border-box;
   .header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:10px 0;
+    z-index: 100;
+    background-color: #FFF;
+    .vue-logo {
+      height: 30px;
+      width: 30px;
+    }
     .title {
-      font-size: 30px;
-      color: #fff;
+      font-size: 25px;
+      color: #2C3E50;
       text-align: center;
-      padding-top: 15px;
+      margin-left: 10px;
     }
   }
-  .main-content {
-    margin: 40px 0;
-    .content-item {
-      height: 115px;
-      width: 100%;
-      background-color: lightgray;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      .content-left {
-        width: 75%;
-        flex: 0 1 auto;
-        padding: 10px;
+  .wrapper {
+    margin: 60px 0;
+    height: 600px;
+    .main-content {
+      padding: 10px;
+      .content-item {
+        height: 115px;
+        width: 100%;
+        background-color: lightgray;
+        box-sizing: border-box;
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        .top {
+        margin-bottom: 10px;
+        border-radius: 5px;
+        .content-left {
+          width: 75%;
+          flex: 0 1 auto;
+          padding: 10px;
           display: flex;
+          flex-direction: column;
           justify-content: space-between;
-          line-height: 20px;
-          .update {
-            font-size: 13px;
+          .top {
+            display: flex;
+            justify-content: space-between;
+            line-height: 20px;
+            color: #2C3E50;
+            .update {
+              font-size: 13px;
+            }
+            .plugin-title {
+              font-size: 20px;
+            }
           }
-          .plugin-title {
-            font-size: 20px;
+          .bottom {
+            .plugin-desc {
+              font-size: 16px;
+              margin-top: 10px;
+              line-height: 1.3;
+              word-break: break-all;
+              color: #8C98A4;
+            }
           }
         }
-        .bottom {
-          .plugin-desc {
-            font-size: 16px;
-            margin-top: 10px;
-            line-height: 1.3;
-            word-break: break-all;
-            color: #333;
-          }
-        }
-      }
-      .content-right {
-        width: 25%;
-        flex: 0 1 auto;
-        margin-left: 10px;
-        padding: 5px 10px 5px 5px;
-        .plugin-demo-img {
-          height: 100%;
-          float: right;
-          & img {
-            width: 90%;
+        .content-right {
+          width: 25%;
+          flex: 0 1 auto;
+          margin-left: 10px;
+          padding: 5px 10px 5px 5px;
+          .plugin-demo-img {
             height: 100%;
             float: right;
+            & img {
+              width: 90%;
+              height: 100%;
+              float: right;
+            }
           }
         }
       }

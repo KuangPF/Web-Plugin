@@ -1,0 +1,27 @@
+{
+  "pluginItems": [{
+      "title": "左滑删除",
+      "desc": "移动端左滑删除,利用touchstart(),touchmove(),touchend()方法实现.",
+      "imgSrc": "./static/index/slide-delete.gif",
+      "BGColor": "#F8F8F8",
+      "pathUrl": "/slide-delete",
+      "updateTime": "2017.12.10"
+    },
+    {
+      "title": "photoswipe",
+      "desc": "实现图片点击预览,该版本为vue-photoswipe,依赖photoswipe.",
+      "imgSrc": "./static/index/photoswipe.gif",
+      "BGColor": "#F8F8F8",
+      "pathUrl": "/photoswipe",
+      "updateTime": "2017.12.13"
+    },
+    {
+      "title": "touch-event",
+      "desc": "利用移动端触摸事件监听左右滑动,适用于移动端菜单的显示",
+      "imgSrc": "./static/index/touchmove.gif",
+      "BGColor": "#F8F8F8",
+      "pathUrl": "/touchmove",
+      "updateTime": "2017.12.14"
+    }
+  ]
+}

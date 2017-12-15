@@ -1,5 +1,5 @@
 <template>
-  <div class="touchmove-container">
+  <div class="touchmove-container" v-title="'touch-event'">
       <div class="main-content" @touchstart='touchstart' @touchmove='touchmove' @touchend='touchend'>
           <div class="menu" @click="menuShow"></div>
           <div class="title">监听左滑与右滑</div>
