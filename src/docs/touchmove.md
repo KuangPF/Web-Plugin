@@ -21,4 +21,5 @@
 - screenX：触摸目标在屏幕中的x坐标。
 - screenY：触摸目标在屏幕中的y坐标。
 - target：触目的DOM节点目标。
+
 当触发`touchend`事件的时候计算出最近一次滑动开始和结束时x坐标的之差distance(STOP_X - START_X) `distance < 0 ? slideLeft():slideRight() `
