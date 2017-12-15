@@ -45,6 +45,14 @@ export default {
           BGColor: "#DBDAD9",
           pathUrl: "/photoswipe",
           updateTime:"2017.12.13"
+        },
+        {
+          title: "touch-event",
+          desc: "利用移动端触摸事件监听左右滑动,适用于移动端菜单的显示",
+          imgSrc: "../../static/index/touchmove.gif",
+          BGColor: "#DBDAD9",
+          pathUrl: "/touchmove",
+          updateTime:"2017.12.14"
         }
       ]
     };

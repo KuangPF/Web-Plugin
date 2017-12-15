@@ -5,27 +5,13 @@ import PageTransition from '@/components/PageTransition'
 import SlideDelete from '@/components/SlideDelete'
 import HelloWorld from '@/components/HelloWorld'
 import PhotoSwipe from '@/components/PhotoSwipe'
+import Touchmove from '@/components/Touchmove'
 
 Vue.use(Router)
 Router.prototype.goBack = function () {
   this.isBack = true
   window.history.go(-1)
 }
-// export default new Router({
-//   routes: [{
-//     path: '/',
-//     name: 'index',
-//     component: index
-//   }, {
-//     path: '/slide-delete',
-//     name: 'SlideDelete',
-//     component: SlideDelete
-//   }, {
-//     path: '/photoswipe',
-//     name: 'PhotoSwipe',
-//     component: PhotoSwipe
-//   }]
-// })
 export default new Router({
   routes: [{
     path: '/',
@@ -43,6 +29,10 @@ export default new Router({
       path: '/photoswipe',
       name: 'PhotoSwipe',
       component: PhotoSwipe
-    }, ]
+    }, {
+      path: '/touchmove',
+      name: 'Touchmove',
+      component: Touchmove
+    }]
   }]
 })
