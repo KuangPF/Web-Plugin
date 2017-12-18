@@ -27,8 +27,11 @@
     }
   }
   .wrapper {
-    margin: 60px 0;
-    height: 600px;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    bottom: 0;
     .main-content {
       padding: 10px;
       .content-item {
@@ -76,6 +79,7 @@
           padding: 5px 10px 5px 5px;
           .plugin-demo-img {
             height: 100%;
+            width: 87px;
             float: right;
             & img {
               width: 90%;

@@ -51,8 +51,6 @@ export default {
   },
   methods: {
     viewDetail(pathUrl) {
-      console.log("kdkd");
-      console.log(pathUrl);
       this.$router.push({ path: pathUrl, query: "" });
     }
   }

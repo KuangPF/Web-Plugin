@@ -5,4 +5,9 @@ export function getPluginItems() {
        method:'get',
        params:''
     })
+    
+    // return axios.request('../../static/data/data.json',{
+    //     method:'get',
+    //     params:''
+    // })
 }
