@@ -79,7 +79,6 @@ export default {
         click: true, //better-scroll 默认会阻止浏览器的原生 click 事件
         probeType: 3
       });
-
       this.rightWarp.on("scroll", pos => {
         if (pos.y <= 0) {
           this.scrollY = Math.abs(Math.round(pos.y));

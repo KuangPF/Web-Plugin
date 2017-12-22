@@ -1,7 +1,12 @@
 # Wep Plugins
 该项目是将在前端开发中遇到的一些插件，或者是实现某种功能的一些技术记录下来，持续更新，欢迎star:blush::blush::blush:
-
 ****
+## 安装
+    npm install || cnpm install(都懂滴)
+## 运行
+    npm run dev
+## 打包
+    npm run build
 ## demo
 #### 手机浏览
 ![image](https://github.com/KuangPF/Web-Plugin/blob/master/static/index/demo.png)
