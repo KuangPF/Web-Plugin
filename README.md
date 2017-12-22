@@ -8,7 +8,10 @@
 #### 浏览器浏览 
 chrome 建议F12开启移动设备模式
 [项目演示地址](https://kuangpf.github.io/Web-Plugin/dist/#/)
+## 技术栈
+vue + vue-router + webpack + es6
 ## 目录
-### 滑动删除https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/slideDelete.md
-### 图片预览https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/photoswipe.md
-### 左右滑动https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/touchmove.md
+* [滑动删除](https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/slideDelete.md)
+* [图片预览](https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/photoswipe.md)
+* [左右滑动](https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/touchmove.md)
+* [左右滑动联动](https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/scrollLinkage.md)

@@ -8,6 +8,7 @@ import preview from './plugins/preview/index'
 
 Vue.use(preview)
 
+
 Vue.config.productionTip = false
 
 Vue.directive('title', {

@@ -2,16 +2,10 @@
 	<div class="slide-content" v-title="'slide-delete'">
         <div class="title">滑动删除</div>
 		<div class="delete-content">
-            <div class="slide-warp"  v-for="(item,index) in list" >
-			<div class="slide-item" :style="item.txtStyle" 
-			@touchstart="onSlipTouchStart($event)"
-			@touchmove="onSlipTouchMove($event)"
-			@touchend="onSlipTouchEnd($event)"
-			:data-index="index">
-			{{item.text}}
+            <div class="slide-warp"  v-for="(item,index) in list" ref="slideWarp" >
+				<div class="slide-item" :data-index="index">{{item.text}}</div>
+				<div class="slide-del" @click="onDeleteItem(index)">删除</div>
 			</div>
-			<div class="slide-del" @click="onDeleteItem(index)">删除</div>
-		</div>
         </div>
 	</div>
 </template>
@@ -25,86 +19,117 @@ export default {
       delWidth: 5.25,
       list: [
         {
-          text: "左滑删除1",
-          txtStyle: ""
+          text: "左滑删除1"
         },
         {
-          text: "左滑删除2",
-          txtStyle: ""
+          text: "左滑删除2"
         },
         {
-          text: "左滑删除3",
-          txtStyle: ""
+          text: "左滑删除3"
         },
         {
-          text: "左滑删除4",
-          txtStyle: ""
+          text: "左滑删除4"
         },
         {
-          text: "左滑删除5",
-          txtStyle: ""
+          text: "左滑删除5"
         },
         {
-          text: "左滑删除6",
-          txtStyle: ""
+          text: "左滑删除6"
+        },
+        {
+          text: "左滑删除7"
+        },
+        {
+          text: "左滑删除8"
+        },
+        {
+          text: "左滑删除9"
+        },
+        {
+          text: "左滑删除10"
         }
       ]
     };
   },
-  mounted() {},
+  mounted() {
+    this._initSlideDelete();
+  },
   methods: {
-    onSlipTouchStart(e) {
-      if (e.touches.length == 1) {
-        this.startX = e.touches[0].clientX;
-      }
-    },
-    onSlipTouchMove(e) {
-      if (e.touches.length == 1) {
-        let delWidth = this.delWidth;
-        let txtStyle = "";
-        // 手指移动结束后的水平位置
-        let endX = event.changedTouches[0].clientX;
-        // 触摸开始与结束,手指移动的距离
-        let disX = this.startX - endX;
-        let a = localStorage.getItem("slideRight");
-        if (disX < 0 && a == 1) {
-          if (disX < -84) {
-            txtStyle = "left:" + 0 + "px";
+    _initSlideDelete() {
+      let initX; //触摸位置
+      let moveX; //滑动时的位置
+      let X = 0; //移动距离
+      let objX = 0; //目标对象位置
+      window.addEventListener("touchstart", function(event) {
+        let obj = event.target.parentNode;
+        if (obj.className == "slide-warp") {
+          initX = event.targetTouches[0].pageX;
+          objX =
+            obj.style.WebkitTransform
+              .replace(/translateX\(/g, "")
+              .replace(/px\)/g, "") * 1;
+        }
+        console.log(objX);
+        if (objX == 0) {
+          window.addEventListener("touchmove", function(event) {
+            let obj = event.target.parentNode;
+            if (obj.className == "slide-warp") {
+              moveX = event.targetTouches[0].pageX;
+              X = moveX - initX;
+              if (X >= 0) {
+                obj.style.WebkitTransform = "translateX(" + 0 + "px)";
+              } else if (X < 0) {
+                let l = Math.abs(X);
+                obj.style.WebkitTransform = "translateX(" + -l + "px)";
+                if (l > 80) {
+                  l = 80;
+                  obj.style.WebkitTransform = "translateX(" + -l + "px)";
+                }
+              }
+            }
+          });
+        } else if (objX < 0) {
+          window.addEventListener("touchmove", function(event) {
+            let obj = event.target.parentNode;
+            if (obj.className == "slide-warp") {
+              moveX = event.targetTouches[0].pageX;
+              X = moveX - initX;
+              if (X >= 0) {
+                let r = -80 + Math.abs(X);
+                obj.style.WebkitTransform = "translateX(" + r + "px)";
+                if (r > 0) {
+                  r = 0;
+                  obj.style.WebkitTransform = "translateX(" + r + "px)";
+                }
+              } else {
+                //向左滑动
+                obj.style.WebkitTransform = "translateX(" + -80 + "px)";
+              }
+            }
+          });
+        }
+      });
+      window.addEventListener("touchend", function(event) {
+        let obj = event.target.parentNode;
+        if (obj.className == "slide-warp") {
+          objX =
+            obj.style.WebkitTransform
+              .replace(/translateX\(/g, "")
+              .replace(/px\)/g, "") * 1;
+          if (objX > -40) {
+            obj.style.WebkitTransform = "translateX(" + 0 + "px)";
+            objX = 0;
           } else {
-            disX = -84 - disX;
-            txtStyle = "left:" + disX + "px";
+            obj.style.WebkitTransform = "translateX(" + -80 + "px)";
+            objX = -80;
           }
-        } else if (disX > 0) {
-          txtStyle = "left:-" + disX + "px";
-          localStorage.setItem("slideRight", 1);
         }
-        let idx = e.currentTarget.dataset.index;
-        let list = this.list;
-        list[idx].txtStyle = txtStyle;
-      }
-    },
-    onSlipTouchEnd(e) {
-      if (event.changedTouches.length == 1) {
-        // 手指移动结束后的水平位置
-        let endX = event.changedTouches[0].clientX;
-        // 触摸开始与结束,手指移动的距离
-        let disX = this.startX - endX;
-        let delWidth = this.delWidth;
-
-        //如果距离小于删除按钮的1/2，不显示删除按钮
-        let txtStyle =
-          disX > delWidth / 2 ? "left:-" + delWidth + "rem" : "left:0";
-        //获取手指触摸的是哪一项
-        let idx = event.currentTarget.dataset.index;
-        let list = this.list;
-        if (list[idx].txtStyle == "left:0px") {
-          localStorage.clear("slideRight");
-        }
-        list[idx].txtStyle = txtStyle;
-        // this.$emit('on-change',list)
-      }
+      });
     },
     onDeleteItem(index) {
+      if (this.$refs.slideWarp[index])
+        this.$refs.slideWarp[index].style.WebkitTransform =
+          "translateX(" + 0 + "px)";
       this.list.splice(index, 1);
       this.$emit("on-change", this.list);
     }

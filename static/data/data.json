@@ -1,5 +1,12 @@
 {
   "pluginItems": [{
+      "title": "左右联动",
+      "desc": "通过引入better-scroll库，利用其暴露的scroll方法以及veu提供的computed属性实现",
+      "imgSrc": "./static/index/scrollLinkage.gif",
+      "BGColor": "#F8F8F8",
+      "pathUrl": "/scroll-linkage",
+      "updateTime": "2017.12.21"
+    }, {
       "title": "左滑删除",
       "desc": "移动端左滑删除,利用touchstart(),touchmove(),touchend()方法实现.",
       "imgSrc": "./static/index/slide-delete.gif",
