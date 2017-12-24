@@ -69,7 +69,6 @@ export default {
               .replace(/translateX\(/g, "")
               .replace(/px\)/g, "") * 1;
         }
-        console.log(objX);
         if (objX == 0) {
           window.addEventListener("touchmove", function(event) {
             let obj = event.target.parentNode;
