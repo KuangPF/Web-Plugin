@@ -8,6 +8,7 @@ import PhotoSwipe from '@/components/PhotoSwipe'
 import Touchmove from '@/components/Touchmove'
 import Test from '@/components/Test'
 import ScrollLinkage from '@/components/ScrollLinkage'
+import VueLazyLoad from '@/components/VueLazyLoad'
 
 Vue.use(Router)
 Router.prototype.goBack = function () {
@@ -45,6 +46,11 @@ export default new Router({
         path: '/test',
         name: 'Test',
         component: Test
+      },
+      {
+        path: '/lazy-load',
+        name: 'VueLazyLoad',
+        component: VueLazyLoad
       }
     ]
   }]

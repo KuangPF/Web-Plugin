@@ -1,0 +1,72 @@
+.lazy-load {
+  position: absolute;
+  width: 100%;
+  background-color: rgba($color: #fbfbfb, $alpha: 1.0);
+  .header {
+    padding: 15px 10px;
+    background: rgba($color: #00A1D6, $alpha: 1.0);
+    font-size: 20px;
+    color: #4e473c;
+  }
+  .img-container {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    .img-warp {
+      width: 100%;
+      .img-item {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+        height: 400px;
+        width: 32.3%;
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        box-sizing: border-box;
+        @media (max-width: 768px) {
+          width: 100%
+        }
+      }
+    }
+  }
+}
+
+img[lazy=loading] {
+  width: 20px;
+  height: 20px;
+  padding: 190px 50% 190px 50%;
+  transform: translateX(-10px);
+  animation: loading 2s infinite;
+  /*your style here*/
+}
+
+img[lazy=error] {
+  /*your style here*/
+  width: 50px;
+  height: 50px;
+  padding: 175px 50% 175px 50%;
+  transform: translate(-25px); //animation: loading 2s infinite;
+}
+
+img[lazy=loaded] {
+  animation: imgLoaded 2s;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0)
+  }
+  ;
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes imgLoaded {
+  0% {
+    opacity: 0;
+  }
+  ;
+  100% {
+    opacity: 1;
+  }
+}
