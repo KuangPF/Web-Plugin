@@ -31,7 +31,7 @@
 <script>
 import Bscroll from 'better-scroll';
 import { getPluginItems } from '../api/aip';
-
+const debug = process.env.NODE_ENV !== 'production';
 export default {
   data() {
     return {
@@ -40,8 +40,12 @@ export default {
   },
   mounted() {
     getPluginItems().then(res => {
-      console.log(res);
-      let pluginItems = res.data.data.pluginItems;
+      let pluginItems;
+      if (debug) {
+        pluginItems = res.data.data.pluginItems;
+      } else {
+        pluginItems = res.data.pluginItems;
+      }
       this.pluginItems = pluginItems;
     });
     this.$nextTick(() => {
