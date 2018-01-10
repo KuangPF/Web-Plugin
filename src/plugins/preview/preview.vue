@@ -67,10 +67,10 @@
 </template>
 
 <script>
-import PhotoSwipe from "photoswipe/dist/photoswipe";
-import UI from "photoswipe/dist/photoswipe-ui-default";
-import "photoswipe/dist/photoswipe.css";
-import "photoswipe/dist/default-skin/default-skin.css";
+import PhotoSwipe from 'photoswipe/dist/photoswipe';
+import UI from 'photoswipe/dist/photoswipe-ui-default';
+import 'photoswipe/dist/photoswipe.css';
+import 'photoswipe/dist/default-skin/default-skin.css';
 
 function closest(el, fn) {
   return el && (fn(el) ? el : closest(el.parentNode, fn));
@@ -84,11 +84,11 @@ function onThumbnailsClick(e) {
 
   // find root element of slide
   var clickedListItem = closest(eTarget, function(el) {
-    return el.tagName && el.className.indexOf("previewImgWrap") !== -1;
+    return el.tagName && el.className.indexOf('previewImgWrap') !== -1;
   });
 
   if (!clickedListItem) {
-    return;
+    return; // eslint-disable-line
   } else {
     return clickedListItem;
   }
@@ -114,8 +114,8 @@ export default {
           index: index,
           getThumbBoundsFn(index) {
             let thumbnail = clickedListItem
-              ? clickedListItem.querySelectorAll(".preview-img")[0]
-              : document.querySelectorAll(".preview-img")[index];
+              ? clickedListItem.querySelectorAll('.preview-img')[0]
+              : document.querySelectorAll('.preview-img')[index];
             let pageYScroll =
               window.pageYOffset || document.documentElement.scrollTop;
             let rect = thumbnail.getBoundingClientRect();

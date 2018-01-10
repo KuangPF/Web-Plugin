@@ -36,7 +36,7 @@ export default {
     },
     touchend(e) {
       let slideDist = this.touchPoint.stopX - this.touchPoint.startX;
-      //右边滑动
+      // 右边滑动
       console.log(slideDist);
       if (slideDist > 20 && !this.isLeftShow) {
         if (!this.isRightShow) {

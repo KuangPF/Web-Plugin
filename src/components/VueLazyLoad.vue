@@ -17,7 +17,7 @@ Vue.use(VueLazyload, {
     error: './static/img/lazyLoad/404.svg',
     loading: './static/img/lazyLoad/loading.svg',
     attempt: 1
-})
+});
 export default {
     data() {
         return {
@@ -49,9 +49,8 @@ export default {
         };
     },
     mounted() {
-
     }
-}
+};
 </script>
 
 <style>

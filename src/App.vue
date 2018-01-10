@@ -6,9 +6,9 @@
   </div>
 </template>
 <script>
-import "./sass/style.scss";
+import './sass/style.scss';
 export default {
-  name: "app",
+  name: 'app',
   data() {
     return {};
   }

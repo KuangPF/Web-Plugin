@@ -1,5 +1,12 @@
 {
   "pluginItems": [{
+      "title": "图片懒加载",
+      "desc": "利用vue-lazyload实现，可自定义加载过程中以及找不到路径所要显示的图片",
+      "imgSrc": "./static/index/vue-lazyLoad.gif",
+      "BGColor": "#F8F8F8",
+      "pathUrl": "/lazy-load",
+      "updateTime": "2018.01.17"
+    }, {
       "title": "左右联动",
       "desc": "通过引入better-scroll库，利用其暴露的scroll方法以及veu提供的computed属性实现",
       "imgSrc": "./static/index/scrollLinkage.gif",

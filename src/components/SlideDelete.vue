@@ -13,10 +13,11 @@
 export default {
   data() {
     return {
-      startX: 0, //  按下的位置
-      moveX: 0, //   鼠标移动时水平方向的位置
-      disX: 0, //	  移动之间的距离
+      startX: 0, // 按下的位置
+      moveX: 0, // 鼠标移动时水平方向的位置
+      disX: 0, // 移动之间的距离
       delWidth: 5.25,
+      /* eslint-disable */
       list: [
         {
           text: "左滑删除1"
@@ -49,6 +50,7 @@ export default {
           text: "左滑删除10"
         }
       ]
+      /* eslint-enable */
     };
   },
   mounted() {
@@ -56,81 +58,82 @@ export default {
   },
   methods: {
     _initSlideDelete() {
-      let initX; //触摸位置
-      let moveX; //滑动时的位置
-      let X = 0; //移动距离
-      let objX = 0; //目标对象位置
-      window.addEventListener("touchstart", function(event) {
+      let initX; // 触摸位置
+      let moveX; // 滑动时的位置
+      let X = 0; // 移动距离
+      let objX = 0; // 目标对象位置
+      window.addEventListener('touchstart', function(event) {
         let obj = event.target.parentNode;
-        if (obj.className == "slide-warp") {
+        if (obj.className === 'slide-warp') {
           initX = event.targetTouches[0].pageX;
           objX =
             obj.style.WebkitTransform
-              .replace(/translateX\(/g, "")
-              .replace(/px\)/g, "") * 1;
+              .replace(/translateX\(/g, '')
+              .replace(/px\)/g, '') * 1;
         }
-        if (objX == 0) {
-          window.addEventListener("touchmove", function(event) {
+        if (objX === 0) {
+          window.addEventListener('touchmove', function(event) {
             let obj = event.target.parentNode;
-            if (obj.className == "slide-warp") {
+            if (obj.className === 'slide-warp') {
               moveX = event.targetTouches[0].pageX;
               X = moveX - initX;
               if (X >= 0) {
-                obj.style.WebkitTransform = "translateX(" + 0 + "px)";
+                obj.style.WebkitTransform = 'translateX(' + 0 + 'px)';
               } else if (X < 0) {
                 let l = Math.abs(X);
-                obj.style.WebkitTransform = "translateX(" + -l + "px)";
+                obj.style.WebkitTransform = 'translateX(' + -l + 'px)';
                 if (l > 80) {
                   l = 80;
-                  obj.style.WebkitTransform = "translateX(" + -l + "px)";
+                  obj.style.WebkitTransform = 'translateX(' + -l + 'px)';
                 }
               }
             }
           });
         } else if (objX < 0) {
-          window.addEventListener("touchmove", function(event) {
+          window.addEventListener('touchmove', function(event) {
             let obj = event.target.parentNode;
-            if (obj.className == "slide-warp") {
+            if (obj.className === 'slide-warp') {
               moveX = event.targetTouches[0].pageX;
               X = moveX - initX;
               if (X >= 0) {
                 let r = -80 + Math.abs(X);
-                obj.style.WebkitTransform = "translateX(" + r + "px)";
+                obj.style.WebkitTransform = 'translateX(' + r + 'px)';
                 if (r > 0) {
                   r = 0;
-                  obj.style.WebkitTransform = "translateX(" + r + "px)";
+                  obj.style.WebkitTransform = 'translateX(' + r + 'px)';
                 }
               } else {
-                //向左滑动
-                obj.style.WebkitTransform = "translateX(" + -80 + "px)";
+                // 向左滑动
+                obj.style.WebkitTransform = 'translateX(' + -80 + 'px)';
               }
             }
           });
         }
       });
-      window.addEventListener("touchend", function(event) {
+      window.addEventListener('touchend', function(event) {
         let obj = event.target.parentNode;
-        if (obj.className == "slide-warp") {
+        if (obj.className === 'slide-warp') {
           objX =
             obj.style.WebkitTransform
-              .replace(/translateX\(/g, "")
-              .replace(/px\)/g, "") * 1;
+              .replace(/translateX\(/g, '')
+              .replace(/px\)/g, '') * 1;
           if (objX > -40) {
-            obj.style.WebkitTransform = "translateX(" + 0 + "px)";
+            obj.style.WebkitTransform = 'translateX(' + 0 + 'px)';
             objX = 0;
           } else {
-            obj.style.WebkitTransform = "translateX(" + -80 + "px)";
+            obj.style.WebkitTransform = 'translateX(' + -80 + 'px)';
             objX = -80;
           }
         }
       });
     },
     onDeleteItem(index) {
-      if (this.$refs.slideWarp[index])
+      if (this.$refs.slideWarp[index]) {
         this.$refs.slideWarp[index].style.WebkitTransform =
-          "translateX(" + 0 + "px)";
+          'translateX(' + 0 + 'px)';
+      }
       this.list.splice(index, 1);
-      this.$emit("on-change", this.list);
+      this.$emit('on-change', this.list);
     }
   }
 };

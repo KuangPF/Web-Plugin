@@ -1,31 +1,32 @@
 <template>
   <div class="scrolllinkage-container">
-      <div class="header">滚动联动监听</div>
-      <div class="content">
-          <div class="left-wrap" ref="leftWarp">
-              <div>
-                  <div class="left-item" v-for="(item,index) in leftItemList" @click="selectMenu(index,$event)" ref="leftItemList" :class="{'current':currentIndex === index}">{{index+1}}-{{item}}</div>
-              </div>
-          </div>
-          <div class="right-wrap" ref="rightWarp">
-              <div>
-                  <div class="right-item" v-for="(item,index) in rightItemList" ref="rightItemList">
-                      <div class="title">{{item.name}}</div>
-                      <div class="detail">
-                          <div class="detail-content" v-for="(item,index) in item.detail">{{item}}</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+    <div class="header">滚动联动监听</div>
+    <div class="content">
+      <div class="left-wrap" ref="leftWarp">
+        <div>
+          <div class="left-item" v-for="(item,index) in leftItemList" @click="selectMenu(index,$event)" ref="leftItemList" :class="{'current':currentIndex === index}">{{index+1}}-{{item}}</div>
+        </div>
       </div>
+      <div class="right-wrap" ref="rightWarp">
+        <div>
+          <div class="right-item" v-for="(item,index) in rightItemList" ref="rightItemList">
+            <div class="title">{{item.name}}</div>
+            <div class="detail">
+              <div class="detail-content" v-for="(item,index) in item.detail">{{item}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Bscroll from "better-scroll";
+import Bscroll from 'better-scroll';
 export default {
   data() {
     return {
+      /* eslint-disable */
       leftItemList: [
         "左1",
         "左2",
@@ -47,11 +48,12 @@ export default {
         { name: "右6", detail: ["右6-1", "右6-2", "右6-3", "右6-4", "右6-5"] },
         { name: "右7", detail: ["右7-1", "右7-2", "右7-3", "右7-4", "右7-5"] },
         { name: "右8", detail: ["右8-1", "右8-2", "右8-3", "右8-4", "右8-5"] },
-				{ name: "右9", detail: ["右9-1", "右9-2", "右9-3", "右9-4", "右9-5","右9-6", "右9-7", "右9-8", "右9-1", "右9-10"] },
-				{ name: "右10", detail: ["右10-1", "右10-2", "右10-3", "右10-4", "右10-5","右10-6", "右10-7", "右10-8", "右10-1", "右10-10"] }
+        { name: "右9", detail: ["右9-1", "右9-2", "右9-3", "右9-4", "右9-5", "右9-6", "右9-7", "右9-8", "右9-1", "右9-10"] },
+        { name: "右10", detail: ["右10-1", "右10-2", "右10-3", "右10-4", "右10-5", "右10-6", "右10-7", "右10-8", "右10-1", "右10-10"] }
       ],
+      /* eslint-enable */
       listHeight: [],
-      scrollY: ""
+      scrollY: ''
     };
   },
   computed: {
@@ -63,7 +65,7 @@ export default {
           return i;
         }
       }
-			return 0;
+      return 0; // eslint-disable-line
     }
   },
   mounted() {
@@ -73,13 +75,13 @@ export default {
   methods: {
     _initScroll() {
       this.leftWarp = new Bscroll(this.$refs.leftWarp, {
-        click: true //better-scroll 默认会阻止浏览器的原生 click 事件
+        click: true // better-scroll 默认会阻止浏览器的原生 click 事件
       });
       this.rightWarp = new Bscroll(this.$refs.rightWarp, {
-        click: true, //better-scroll 默认会阻止浏览器的原生 click 事件
+        click: true, // better-scroll 默认会阻止浏览器的原生 click 事件
         probeType: 3
       });
-      this.rightWarp.on("scroll", pos => {
+      this.rightWarp.on('scroll', pos => {
         if (pos.y <= 0) {
           this.scrollY = Math.abs(Math.round(pos.y));
         }
@@ -95,14 +97,14 @@ export default {
         this.listHeight.push(height);
       }
     },
-		selectMenu(index,event) {
-			if(!event._constructed) {
-				return;
-			}
-			let rightItemList = this.$refs.rightItemList;
-			let el = rightItemList[index];
-			this.rightWarp.scrollToElement(el, 300);
-		}
+    selectMenu(index, event) {
+      if (!event._constructed) {
+        return;
+      }
+      let rightItemList = this.$refs.rightItemList;
+      let el = rightItemList[index];
+      this.rightWarp.scrollToElement(el, 300);
+    }
   }
 };
 </script>

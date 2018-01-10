@@ -14,6 +14,7 @@
 export default {
   data() {
     return {
+      /* eslint-disable */
       list: [
         {
           src: "./static/photoswipe/img/thumb/001.jpg",
@@ -178,6 +179,7 @@ export default {
           h: 393
         }
       ]
+      /* eslint-enable */
     };
   },
   mounted() {}

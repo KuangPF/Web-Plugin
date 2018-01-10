@@ -1,20 +1,20 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import index from '@/components/index'
-import PageTransition from '@/components/PageTransition'
-import SlideDelete from '@/components/SlideDelete'
-import HelloWorld from '@/components/HelloWorld'
-import PhotoSwipe from '@/components/PhotoSwipe'
-import Touchmove from '@/components/Touchmove'
-import Test from '@/components/Test'
-import ScrollLinkage from '@/components/ScrollLinkage'
-import VueLazyLoad from '@/components/VueLazyLoad'
+import Vue from 'vue';
+import Router from 'vue-router';
+import index from '@/components/index';
+import PageTransition from '@/components/PageTransition';
+import SlideDelete from '@/components/SlideDelete';
+/* import HelloWorld from '@/components/HelloWorld'; */
+import PhotoSwipe from '@/components/PhotoSwipe';
+import Touchmove from '@/components/Touchmove';
+import Test from '@/components/Test';
+import ScrollLinkage from '@/components/ScrollLinkage';
+import VueLazyLoad from '@/components/VueLazyLoad';
 
-Vue.use(Router)
+Vue.use(Router);
 Router.prototype.goBack = function () {
-  this.isBack = true
-  window.history.go(-1)
-}
+  this.isBack = true;
+  window.history.go(-1);
+};
 export default new Router({
   routes: [{
     path: '/',
@@ -23,7 +23,7 @@ export default new Router({
     children: [{
         path: '',
         name: 'index',
-        component: index,
+        component: index
       }, {
         path: '/slide-delete',
         name: 'SlideDelete',
@@ -54,4 +54,4 @@ export default new Router({
       }
     ]
   }]
-})
+});
