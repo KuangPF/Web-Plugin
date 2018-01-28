@@ -1,11 +1,4 @@
 # touchmove
-#### Install with npm: 
-    npm install
-#### start webpack-dev-server
-    npm run start:dev
-#### 打包
-    npm run build
-#### 效果
 ![image](https://github.com/KuangPF/Web-Plugin/blob/master/static/index/touchmove.gif)
 ### HTML5触摸事件
     touchstart:当手指触摸屏幕时候触发，即使已经有一个手指放在屏幕上也会触发。

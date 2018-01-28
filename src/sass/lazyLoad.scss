@@ -27,6 +27,25 @@
         }
       }
     }
+    .bg-img {
+      height: 400px;
+      width: 32.3%;
+      margin-top: 20px;
+      background-size: 100% 100%;
+      @media (max-width: 768px) {
+        width: 100%
+      }
+    }
+    .bg-img[lazy=loading] {
+      background: center no-repeat;
+      background-size: 20px 20px;
+    }
+    .bg-img[lazy=error] {
+      background-size: 50px 50px;
+    }
+    .bg-img[lazy=loaded] {
+      animation: imgLoaded 2s;
+    }
   }
 }
 
