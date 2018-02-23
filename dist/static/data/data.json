@@ -1,5 +1,12 @@
 {
   "pluginItems": [{
+      "title": "vue无缝滚动component",
+      "desc": "使用 vue-seamless-scroll 插件,可进行上下左右滚动。",
+      "imgSrc": "./static/index/eamless-scroll.gif",
+      "BGColor": "#F8F8F8",
+      "pathUrl": "/eamless-scroll",
+      "updateTime": "2018.02.23"
+    }, {
       "title": "图片懒加载",
       "desc": "利用vue-lazyload实现，可自定义加载过程中以及找不到路径所要显示的图片",
       "imgSrc": "./static/index/vue-lazyLoad.gif",

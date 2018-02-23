@@ -9,6 +9,9 @@ import Touchmove from '@/components/Touchmove';
 import Test from '@/components/Test';
 import ScrollLinkage from '@/components/ScrollLinkage';
 import VueLazyLoad from '@/components/VueLazyLoad';
+import EamlessScroll from '@/components/EamlessScroll';
+
+/* test */
 
 Vue.use(Router);
 Router.prototype.goBack = function () {
@@ -51,6 +54,10 @@ export default new Router({
         path: '/lazy-load',
         name: 'VueLazyLoad',
         component: VueLazyLoad
+      }, {
+        path: '/eamless-scroll',
+        name: 'EamlessScroll',
+        component: EamlessScroll
       }
     ]
   }]

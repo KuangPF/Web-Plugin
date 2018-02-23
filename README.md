@@ -18,3 +18,4 @@ vue + vue-router + webpack + es6
 * [左右滑动](https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/touchmove.md)
 * [左右滑动联动](https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/scrollLinkage.md)
 * [图片懒加载](https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/lazyload.md)
+* [vue无缝滚动component](https://github.com/KuangPF/Web-Plugin/blob/master/src/docs/eamlessScroll.md)
