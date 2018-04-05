@@ -9,7 +9,7 @@
 ![image](https://github.com/KuangPF/Web-Plugin/blob/master/static/index/demo.png)
 #### 浏览器浏览
 chrome 建议F12开启移动设备模式
-[项目演示地址](https://kuangpf.github.io/Web-Plugin/dist/#/)
+[项目演示地址](https://kuangpf.com/Web-Plugin/dist/#/)
 ### 技术栈
 vue + vue-router + webpack + es6
 ### 目录
